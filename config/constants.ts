@@ -3,7 +3,7 @@ export const config = {
   PORT: 5000,
 
   MESSAGE: {
-    WELCOME: "You're successfully connected to MONGO API.",
+    WELCOME: "You're successfully connected to GOSPEL API.",
   },
 
   DB: {
