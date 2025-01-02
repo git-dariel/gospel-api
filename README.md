@@ -1,6 +1,6 @@
-# MONGO
+# GOSPEL API
 
-A robust and scalable MongoDB template using Express.js and TypeScript, designed for building modern web applications.
+A robust and scalable Gospel API using Express.js and TypeScript, designed for building modern web applications.
 
 ## 📋 Prerequisites
 
@@ -14,8 +14,8 @@ A robust and scalable MongoDB template using Express.js and TypeScript, designed
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/git-dariel/Mongo.git
-cd Mongo
+git clone https://github.com/git-dariel/gospel-api.git
+cd gospel-api
 ```
 
 2. Install dependencies:
