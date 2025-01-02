@@ -44,12 +44,6 @@ export class UserController {
    * /user/get/all:
    *   get:
    *     summary: Get the users
-   *     parameters:
-   *         name: all
-   *         required: true
-   *         schema:
-   *           type: string
-   *         description: The all users
    *     responses:
    *       200:
    *         description: The user data
@@ -68,19 +62,25 @@ export class UserController {
 
   /**
    * @swagger
-   * /user/get/create:
-   *   get:
-   *     summary: Create the user
-   *     parameters:
-   *       - in: path
-   *         name: create
-   *         required: true
-   *         schema:
-   *           type: string
-   *         description: The user create
+   * /user/create:
+   *   post:
+   *     summary: Create a new user
+   *     requestBody:
+   *      required: true
+   *      content:
+   *        application/json:
+   *          schema:
+   *            type: object
+   *            properties:
+   *              username:
+   *                type: string
+   *              email:
+   *                type: string
+   *              password:
+   *                type: string
    *     responses:
    *       200:
-   *         description: The user data
+   *         description: User created successfully
    *       404:
    *         description: User not found
    */
@@ -96,19 +96,25 @@ export class UserController {
 
   /**
    * @swagger
-   * /user/get/update:
-   *   get:
-   *     summary: Update the user
-   *     parameters:
-   *       - in: path
-   *         name: update
-   *         required: true
-   *         schema:
-   *           type: string
-   *         description: The update user
+   * /user/update:
+   *   put:
+   *     summary: Update a user
+   *     requestBody:
+   *      required: true
+   *      content:
+   *        application/json:
+   *          schema:
+   *            type: object
+   *            properties:
+   *              username:
+   *                type: string
+   *              email:
+   *                type: string
+   *              password:
+   *                type: string
    *     responses:
    *       200:
-   *         description: The user data
+   *         description: User updated successfully
    *       404:
    *         description: User not found
    */
@@ -124,19 +130,19 @@ export class UserController {
 
   /**
    * @swagger
-   * /user/get/delete:
-   *   get:
-   *     summary: delete the user
+   * /user/delete/{id}:
+   *   delete:
+   *     summary: Delete a user by ID
    *     parameters:
    *       - in: path
-   *         name: delete
+   *         name: id
    *         required: true
    *         schema:
    *           type: string
    *         description: The delete user
    *     responses:
    *       200:
-   *         description: The user data
+   *         description: User deleted successfully
    *       404:
    *         description: User not found
    */
@@ -152,16 +158,19 @@ export class UserController {
 
   /**
    * @swagger
-   * /user/get/search:
-   *   get:
-   *     summary: search the user
-   *     parameters:
-   *       - in: path
-   *         name: search
-   *         required: true
-   *         schema:
-   *           type: string
-   *         description: The search user
+   * /user/search:
+   *   post:
+   *     summary: Search for a user
+   *     requestBody:
+   *       required: true
+   *       content:
+   *         application/json:
+   *           schema:
+   *             type: object
+   *             properties:
+   *               query:
+   *                 type: string
+   *                 description: The search query
    *     responses:
    *       200:
    *         description: The user data
